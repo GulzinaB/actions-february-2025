@@ -1,23 +1,24 @@
 name: Create EC2
 
-on: 
-  push: 
+on:
+  push:
     branches: [ "main" ]
 
-jobs: 
+jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
     - name: Checkout SCM
       uses: actions/checkout@v4
       with:
-        reposotory: GulzinaB/actions-terraform
+        repository: kaizenacademy/actions-terraform
 
-    - name: Download Terraform    
+    - name: Download Terraform
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: "1.12.2"
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4.1.0
       with:
