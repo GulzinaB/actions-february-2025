@@ -13,3 +13,5 @@ jobs:
       uses: actions/checkout@v4
       with:
         reposotory: GulzinaB/actions-terraform
+
+    - run: ls
